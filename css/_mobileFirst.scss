@@ -4,41 +4,6 @@
     box-sizing: border-box;
 }
 
-@font-face {
-    font-family: 'perpetuaBOLD';
-    src: url('../assets/fonts/perpetua/Perpetua_Bold_font.ttf');
-}
-@font-face {
-    font-family: 'perpetuaREGULAR';
-    src: url('../assets/fonts/perpetuaSgdaVersion/Perpetua.otf');
-}
-@font-face {
-    font-family: 'perpetuaTitlingMTBOLD';
-    src: url('../assets/fonts/perpetua-titling-mt/pertibd.ttf');
-}
-
-/* VARIABLES */
-$header-footer-color: #918367;
-$body-color: #EFEBE4;
-$letter-beige-color: #FFF7E8;
-$letter-darkBlue-color: #596f91;
-$letter-lightBlue-color: #B4C5DE;
-$button-brown-color: #918367d2;
-$dropdownItems-brown-color: #5d5340;
-
-
-/* Mixins */
-@mixin grid-template($columns, $rows, $column-gap, $row-gap){
-    display: grid;
-    grid-template-columns: $columns;
-    grid-template-rows: $rows;
-    column-gap: $column-gap;
-    row-gap: $row-gap;
-}
-
-/* Maps */
-$palette: ("header-footer": #918367, "body": #EFEBE4, "letter-beige": #FFF7E8, "letter-dark-blue": #596f91, "letter-light-blue": #B4C5DE, "button-brown": #918367d2, "dropdown-items": #5d5340);
-
 /* Estilos generales */
 a{text-decoration: none;}
 ul{list-style-type: none;}
@@ -72,7 +37,7 @@ h5, h6, p, li, button, input, label, textarea{
 
 .button{
     background-color: map-get($map: $palette, $key: "button-brown");
-    border: 1px solid $header-footer-color;
+    border: 1px solid map-get($map: $palette, $key: "header-footer");
     border-radius: 6px;
     box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
     color: map-get($map: $palette, $key: "letter-beige");
@@ -123,7 +88,7 @@ header{
     letter-spacing: 3px;
     text-shadow: 0rem 0.125rem 0.188rem #00000054;
     &:hover{
-        color: $letter-lightBlue-color;
+        color: map-get($map: $palette, $key: "letter-light-blue");
         text-shadow: 0.1rem 0.2rem 0.2rem #0f0f0fb4;
     }
 }
@@ -132,14 +97,14 @@ header{
     color: map-get($map: $palette, $key: "letter-beige");
     letter-spacing: 1.5px;
     &:hover{
-        color: $letter-lightBlue-color;
+        color: map-get($map: $palette, $key: "letter-light-blue");
     }
 }
 
 .dropdown-item{ /* nav catalogo submenu style */
-    color: $dropdownItems-brown-color;
+    color: map-get($map: $palette, $key: "dropdown-items");
     &:hover{
-        background-color: $letter-lightBlue-color;
+        background-color: map-get($map: $palette, $key: "letter-light-blue");
         cursor: pointer;
     }
 }
@@ -162,7 +127,7 @@ header{
 
 /* FOOTER */
 footer{
-    background-color: $header-footer-color;
+    background-color: map-get($map: $palette, $key: "header-footer");
     padding: 30px 2px 15px 2px;
     margin-top: 15px;
     div{
@@ -217,7 +182,7 @@ footer{
         max-width: 500px;
         h3, p{/* style ojalBoton texts */
             text-align: center;
-            color: $letter-darkBlue-color;
+            color: map-get($map: $palette, $key: "letter-dark-blue");
         }
         h3{  
             font-weight: bold;
@@ -239,7 +204,7 @@ footer{
 .main-container .products-container{grid-area: products;}
 .main-container .pagination-container{grid-area: pagination;}
 
-#catalogo-main p, #catalogo-main button, #catalogo-main a{color: $letter-darkBlue-color;}
+#catalogo-main p, #catalogo-main button, #catalogo-main a{color: map-get($map: $palette, $key: "letter-dark-blue");}
 
 /* filter style and flexbox */
 .filters-container{
@@ -247,7 +212,7 @@ footer{
     width: 100%;
     justify-content: space-between;
     margin: 8px 0px;
-    border-bottom: 1px solid $letter-darkBlue-color;
+    border-bottom: 1px solid map-get($map: $palette, $key: "letter-dark-blue");
 }
 .filters-container p{margin: 5px 0px;}
 
@@ -291,7 +256,7 @@ footer{
 }
 
 #ojal-main h4,#ojal-main h5, #ojal-main p, #ojal-main a{
-    color: $letter-darkBlue-color;
+    color: map-get($map: $palette, $key: "letter-dark-blue");
     text-align: center;
 }
 #ojal-main h4,#ojal-main h5{
@@ -346,7 +311,7 @@ footer{
     margin: 15px auto;
 }
 
-.main-container, .main-container a, .main-container h5{color: $letter-darkBlue-color}
+.main-container, .main-container a, .main-container h5{color: map-get($map: $palette, $key: "letter-dark-blue")}
 .main-container h4, .main-container h5{
     text-align: center;
     font-weight: bold;
@@ -427,8 +392,8 @@ footer{
 /* styles */
 /* style buttons send, clean and robot */
 #contact-form input:nth-of-type(4), #contact-form input:nth-of-type(5),#contact-form fieldset{
-    background-color: $button-brown-color;
-    border: 1px solid $header-footer-color;
+    background-color: map-get($map: $palette, $key: "button-brown");
+    border: 1px solid map-get($map: $palette, $key: "header-footer");
     border-radius: 6px;
     box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
     color: map-get($map: $palette, $key: "letter-beige");
@@ -445,7 +410,7 @@ footer{
 /* Style text input y textarea */
 #contact-form input:not(.not-min-width), #contact-form textarea{
     background-color: #b0c0daa0;
-    border: 1px solid $letter-lightBlue-color;
+    border: 1px solid map-get($map: $palette, $key: "letter-light-blue");
     border-radius: 6px;
     width: 100%;
 }
@@ -465,7 +430,7 @@ footer{
 /* basic style */
 #ofertas-main a{transition: 0.3s;}
 #ofertas-main a:hover{
-    color: $dropdownItems-brown-color;
+    color: map-get($map: $palette, $key: "dropdown-items");
     text-decoration: underline;
     cursor: pointer;
 }

@@ -1,11 +1,5 @@
 @charset "UTF-8";
-/* importo mi codigo base de mobile first */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Importo las variables */ /* Cargo las fuentes */
 @font-face {
   font-family: "perpetuaBOLD";
   src: url("../assets/fonts/perpetua/Perpetua_Bold_font.ttf");
@@ -18,9 +12,15 @@
   font-family: "perpetuaTitlingMTBOLD";
   src: url("../assets/fonts/perpetua-titling-mt/pertibd.ttf");
 }
-/* VARIABLES */
 /* Mixins */
 /* Maps */
+/* importo mi codigo base de mobile first */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Estilos generales */
 a {
   text-decoration: none;
