@@ -1,10 +1,5 @@
 @charset "UTF-8";
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Importo las variables */ /* Cargo las fuentes */
 @font-face {
   font-family: "perpetuaBOLD";
   src: url("../assets/fonts/perpetua/Perpetua_Bold_font.ttf");
@@ -17,7 +12,16 @@
   font-family: "perpetuaTitlingMTBOLD";
   src: url("../assets/fonts/perpetua-titling-mt/pertibd.ttf");
 }
-/* VARIABLES */
+/* Mixins */
+/* Maps */
+/* importo mi codigo base de mobile first */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos generales */
 a {
   text-decoration: none;
 }
@@ -70,13 +74,6 @@ h5, h6, p, li, button, input, label, textarea {
   font-family: "perpetuaREGULAR";
 }
 
-.main-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .float-wpp {
   position: fixed;
   bottom: 1em;
@@ -86,11 +83,37 @@ h5, h6, p, li, button, input, label, textarea {
   z-index: 2;
 }
 
+.button, .bigger-button {
+  background-color: rgba(145, 131, 103, 0.8235294118);
+  border: 1px solid #918367;
+  border-radius: 6px;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
+  color: #FFF7E8;
+  width: 6.5em;
+  height: auto;
+}
+.button:hover, .bigger-button:hover {
+  background-color: #B4C5DE;
+  border-color: #596f91;
+  color: #596f91;
+}
+
+.bigger-button {
+  width: 8em;
+  height: 2em;
+}
+
 /* grid general pages */
 .main-container {
   display: grid;
   grid-template-columns: 5% 90% 5%;
+  grid-template-rows: auto;
+  -moz-column-gap: 0px;
+       column-gap: 0px;
+  row-gap: 0px;
+  justify-content: center;
   justify-items: center;
+  align-items: center;
   margin-top: 10px;
 }
 
@@ -149,7 +172,6 @@ header a {
 
 .icon-container {
   width: 15vw;
-  flex-basis: 100%;
   display: flex;
   justify-content: space-around;
 }
@@ -200,8 +222,10 @@ footer div .copyright {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
-  gap: 8px;
-  justify-items: center;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+  row-gap: 8px;
+  justify-content: center;
   align-items: center;
   max-width: 650px;
   margin: 15px auto;
@@ -235,20 +259,6 @@ footer div .copyright {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-}
-#index-main .main-container a button {
-  background-color: rgba(145, 131, 103, 0.8235294118);
-  border: 1px solid #918367;
-  border-radius: 6px;
-  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
-  color: #FFF7E8;
-  width: 6.5em;
-  height: auto;
-}
-#index-main .main-container a button:hover {
-  background-color: #B4C5DE;
-  border-color: #596f91;
-  color: #596f91;
 }
 
 /* CATALOGO */
@@ -389,8 +399,11 @@ footer div .copyright {
 /* history grid */
 .history-grid {
   display: grid;
-  gap: 10px;
   grid-template-columns: 0.3fr 1fr;
+  grid-template-rows: auto;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  row-gap: 10px;
   justify-content: center;
   grid-template-areas: "first-date first-text" "second-date second-text" "third-date third-text";
 }
@@ -481,6 +494,7 @@ footer div .copyright {
 
 #contact-main .main-container section:nth-child(3) {
   grid-area: links-social;
+  justify-self: center;
 }
 
 #contact-main .main-container section:nth-child(4) {
@@ -489,7 +503,11 @@ footer div .copyright {
 
 /* form grid */
 #contact-form .grid-container {
+  max-width: 750px;
+  margin: 15px auto;
+  display: grid;
   grid-template-columns: 0.8fr 0.8fr 1fr 0.5fr 0.5fr 1fr;
+  gap: 15px;
   justify-content: center;
   grid-template-areas: "name name name-field name-field name-field name-field" "email email email-field email-field email-field email-field" " tipo tipo tipo1 tipo1 tipo2 tipo2" "tel tel tel-field tel-field tel-field tel-field" "consulta consulta consulta-text consulta-text consulta-text consulta-text" ". . . . clean clean" "title-robot title-robot title-robot . . ." "robot-check robot-check robot-check . send send";
 }
@@ -528,6 +546,7 @@ footer div .copyright {
 
 #contact-form .grid-container input:nth-of-type(4) {
   grid-area: clean;
+  justify-self: center;
 }
 
 #contact-form .grid-container input:nth-of-type(5) {
@@ -536,7 +555,7 @@ footer div .copyright {
 
 #contact-form .grid-container div:nth-of-type(1) {
   grid-area: tipo1;
-  justify-self: flex-end;
+  justify-self: center;
 }
 
 #contact-form .grid-container div:nth-of-type(2) {
@@ -553,14 +572,16 @@ footer div .copyright {
 
 #contact-form .grid-container fieldset:first-of-type {
   grid-area: robot-check;
+  justify-self: center;
 }
 
 /* flexbox social links */
-.social-flex, .links-social-flex {
+.social-flex {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 #contact-social .container {
@@ -607,7 +628,7 @@ footer div .copyright {
 #ofertas-main .main-container {
   grid-template-columns: 0.3fr 1fr 0.3fr;
   height: 90vh;
-  justify-content: center;
+  justify-items: center;
   grid-template-areas: "track track track" ". title ." ". subtitle .";
 }
 
@@ -669,6 +690,9 @@ footer div .copyright {
     display: grid;
     grid-template-columns: 35% 15% 10% 15% 25%;
     grid-template-rows: 45% 45% 10%;
+    -moz-column-gap: 0px;
+         column-gap: 0px;
+    row-gap: 0px;
     grid-template-areas: "Schedule Schedule . Maps Maps" "Social Social . Maps Maps" "Copyright Copyright Copyright Copyright Copyright";
   }
   footer div:first-child {
@@ -694,10 +718,11 @@ footer div .copyright {
   #index-main .main-container {
     display: grid;
     grid-template-columns: 0.4fr 1fr 1fr 0.4fr;
+    grid-template-rows: auto;
     -moz-column-gap: 1rem;
          column-gap: 1rem;
     row-gap: 1rem;
-    justify-items: center;
+    justify-content: center;
     grid-template-areas: ". carousel carousel ." ". multimedia texts .";
   }
   #index-main .main-container div:first-child {
