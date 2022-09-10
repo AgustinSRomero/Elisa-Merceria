@@ -30,6 +30,10 @@ ul {
   list-style-type: none;
 }
 
+body {
+  background-color: #EFEBE4;
+}
+
 h1 {
   font-size: 2.5em;
 }
@@ -83,7 +87,7 @@ h5, h6, p, li, button, input, label, textarea {
   z-index: 2;
 }
 
-.button, .bigger-button {
+.button, .button-catalogo, .bigger-button {
   background-color: rgba(145, 131, 103, 0.8235294118);
   border: 1px solid #918367;
   border-radius: 6px;
@@ -92,7 +96,7 @@ h5, h6, p, li, button, input, label, textarea {
   width: 6.5em;
   height: auto;
 }
-.button:hover, .bigger-button:hover {
+.button:hover, .button-catalogo:hover, .bigger-button:hover {
   background-color: #B4C5DE;
   border-color: #596f91;
   color: #596f91;
@@ -286,7 +290,7 @@ footer div .copyright {
   grid-area: pagination;
 }
 
-#catalogo-main p, #catalogo-main button, #catalogo-main a {
+#catalogo-main p, #catalogo-main a {
   color: #596f91;
 }
 
@@ -328,6 +332,14 @@ footer div .copyright {
 /* buttons boxmodel */
 .pagination-container {
   margin-top: 10px;
+}
+
+/* Buttons */
+.button-catalogo {
+  color: #FFF7E8;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  padding: 1px;
+  margin: 3px 1px;
 }
 
 /* OJAL Y BOTON */
@@ -401,9 +413,9 @@ footer div .copyright {
   display: grid;
   grid-template-columns: 0.3fr 1fr;
   grid-template-rows: auto;
-  -moz-column-gap: 10px;
-       column-gap: 10px;
-  row-gap: 10px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  row-gap: 30px;
   justify-content: center;
   grid-template-areas: "first-date first-text" "second-date second-text" "third-date third-text";
 }
@@ -468,7 +480,7 @@ footer div .copyright {
 }
 
 .us-titles {
-  margin: 10px auto;
+  margin: 40px auto;
 }
 
 .first-date-flex p, .second-date-flex p {
@@ -769,7 +781,6 @@ footer div .copyright {
   /* grid */
   .history-grid {
     grid-template-columns: 0.1fr 1fr;
-    gap: 20px;
   }
   /* CONTACTO */
   #contact-social .container {
